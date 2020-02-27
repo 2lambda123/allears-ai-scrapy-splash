@@ -416,7 +416,7 @@ class SplashMiddleware(object):
     def _log_400(self, request, response, spider):
         from scrapy_splash import SplashJsonResponse
         if isinstance(response, SplashJsonResponse):
-            logger.warning(
+            logger.error(
                 "Bad request to Splash: %s" % response.data,
                 {'request': request},
                 extra={'spider': spider}
